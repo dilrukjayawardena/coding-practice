@@ -1,6 +1,6 @@
 from collections import Counter
 s = 'eat'
-t = 'tne'
+t = 'tae'
 
 #Bf solution
 def anagram_bf(s,t):
@@ -38,10 +38,10 @@ def is_ana(s,t):
     
     s_counts= Counter(s)  
     t_counts= Counter(t)
-
-    for key,val in s_counts.items():
-        if key not in t_counts or t_counts[key]!=val:
-            return False
-    return True
+    return s_counts==t_counts
+    # for key,val in s_counts.items():
+    #     if key not in t_counts or t_counts[key]!=val:
+    #         return False
+    # return True
 
 print(is_ana(s,t))
