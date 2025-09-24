@@ -1,5 +1,6 @@
-s = 'eet'
-t = 'tte'
+from collections import Counter
+s = 'eat'
+t = 'tne'
 
 #Bf solution
 def anagram_bf(s,t):
@@ -10,7 +11,7 @@ def anagram_bf(s,t):
             return False
     return True
 
-print(anagram_bf(s,t))
+# print(anagram_bf(s,t))
 
 #optimal solution
 
@@ -19,7 +20,7 @@ def anamgram_opti(s,t):
         return True
     return False
 
-print(anamgram_opti(s,t))
+# print(anamgram_opti(s,t))
 
 # if character in s adds 1 if same avail in t removes one
 def is_anagram(s, t):
@@ -33,4 +34,14 @@ def is_anagram(s, t):
     return all(c == 0 for c in count)
 
 
+def is_ana(s,t):
     
+    s_counts= Counter(s)  
+    t_counts= Counter(t)
+
+    for key,val in s_counts.items():
+        if key not in t_counts or t_counts[key]!=val:
+            return False
+    return True
+
+print(is_ana(s,t))
