@@ -1,4 +1,4 @@
-from collections import Counter
+from collections import Counter,defaultdict
 s = 'eat'
 t = 'tae'
 
@@ -44,4 +44,15 @@ def is_ana(s,t):
     #         return False
     # return True
 
-print(is_ana(s,t))
+# print(is_ana(s,t))
+
+s=['ate','eat','rat','art']
+
+def ana_list(arr):
+    dlist=defaultdict(list)
+    for item in s:
+        key=''.join(sorted(item))
+        dlist[key].append(item)
+    print(dlist)
+
+ana_list(s)
